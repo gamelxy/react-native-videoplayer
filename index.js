@@ -1,16 +1,16 @@
 // JavaScript
 
-var React = require('react-native');
-var { requireNativeComponent } = React;
+import React from 'react';
+import requireNativeComponent from 'react-native';
 
-class VideoPlayer extends React.Component {
+const VideoPlayerView = requireNativeComponent('VideoPlayerView', VideoPlayer);
+
+export default class VideoPlayer extends React.Component {
+  static propTypes = {
+    url: React.PropTypes.string
+  };
+
   render() {
     return <VideoPlayerView {...this.props} />;
   }
 }
-VideoPlayer.propTypes = {
-  url: React.PropTypes.string
-};
-
-var VideoPlayerView = requireNativeComponent('VideoPlayerView', VideoPlayer);
-module.exports = VideoPlayer;
