@@ -233,7 +233,27 @@ typedef struct{
   }
 }
 
-- (void)orientationChanged:(UIInterfaceOrientation)rotateOrientation {
+- (void)orientationChanged:(NSNotification *)notification {
+  UIInterfaceOrientation rotateOrientation = UIInterfaceOrientationPortrait;
+  UIDevice *device = notification.object;
+  if ([device isKindOfClass:[UIDevice class]]) {
+    switch (device.orientation) {
+      case UIDeviceOrientationPortrait:
+        rotateOrientation = UIInterfaceOrientationPortrait;
+        break;
+      case UIDeviceOrientationLandscapeLeft:
+        rotateOrientation = UIInterfaceOrientationLandscapeRight;
+        break;
+      case UIDeviceOrientationLandscapeRight:
+        rotateOrientation = UIInterfaceOrientationLandscapeLeft;
+        break;
+      case UIDeviceOrientationPortraitUpsideDown:
+        rotateOrientation = UIInterfaceOrientationPortrait;
+        break;
+      default:
+        break;
+    }
+  }
   [self performOrientationChange:rotateOrientation];
 }
 
