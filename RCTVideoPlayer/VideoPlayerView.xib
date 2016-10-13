@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayerView">
+            <connections>
+                <outlet property="activityView" destination="Ocq-ua-8PG" id="qw1-4l-aWj"/>
+                <outlet property="controlsOverlay" destination="Nkw-ok-7Lz" id="mea-bT-iB1"/>
+                <outlet property="fullScreenButton" destination="bGz-lo-4QM" id="WCJ-TX-VhG"/>
+                <outlet property="landscapeControlOverlay" destination="Cn3-CE-kCB" id="hgz-ux-C6V"/>
+                <outlet property="landscapePlayButton" destination="Ujt-zZ-fI4" id="JWg-yc-O65"/>
+                <outlet property="playerView" destination="Xbs-xg-SfL" id="yZW-Ge-Bue"/>
+                <outlet property="portraintPlayButton" destination="C1Z-OF-unP" id="5q1-P1-3Dl"/>
+                <outlet property="portraitControlOverlay" destination="7RP-rg-WmA" id="vHw-6Z-zXQ"/>
+            </connections>
+        </placeholder>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKx-28-k0P">
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xbs-xg-SfL" customClass="VideoPlayerLayerView">
+                    <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="100.00%"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nkw-ok-7Lz" userLabel="Controls View">
+                    <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="100.00%"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7RP-rg-WmA">
+                            <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="100.00%"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1Z-OF-unP">
+                                    <frame key="frameInset" minX="164" minY="85" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <state key="normal" title="播放"/>
+                                    <state key="selected" title="暂停"/>
+                                    <connections>
+                                        <action selector="playButtonClicked:" destination="-1" eventType="touchUpInside" id="dh5-qA-Ssk"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cn3-CE-kCB">
+                            <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="100.00%"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujt-zZ-fI4">
+                                    <frame key="frameInset" minX="10" width="46" height="30" maxY="10"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <state key="normal" title="播放"/>
+                                    <state key="selected" title="暂停"/>
+                                    <connections>
+                                        <action selector="playButtonClicked:" destination="-1" eventType="touchUpInside" id="Thv-iQ-f8E"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGz-lo-4QM">
+                            <frame key="frameInset" width="40" height="30" maxX="15" maxY="10"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <state key="normal" title="全屏"/>
+                            <state key="selected" title="缩小"/>
+                            <connections>
+                                <action selector="fullButtonClicked:" destination="-1" eventType="touchUpInside" id="A8v-WP-3Jg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ocq-ua-8PG">
+                    <frame key="frameInset" minX="50.00%" minY="50.31%" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-3217" y="-2596"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+</document>

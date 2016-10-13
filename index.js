@@ -1,7 +1,7 @@
 // JavaScript
 
 import React from 'react';
-import requireNativeComponent from 'react-native';
+import { requireNativeComponent } from 'react-native';
 
 const VideoPlayerView = requireNativeComponent('VideoPlayerView', VideoPlayer);
 
